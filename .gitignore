@@ -1,0 +1,43 @@
+.DS_Store
+Thumbs.db
+
+# Editor state
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.autosave
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / optional dashboard
+node_modules/
+Software/node_modules/
+dist/
+build/
+
+# PlatformIO / embedded
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# KiCad generated backups and locks
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.lck
+fp-info-cache
+
+# OS and export scratch folders
+exports/tmp/
+tmp/

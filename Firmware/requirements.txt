@@ -1,0 +1,1 @@
+# Add Python tooling dependencies here if the firmware workflow needs them.

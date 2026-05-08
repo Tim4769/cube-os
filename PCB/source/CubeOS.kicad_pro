@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "filename": "CubeOS.kicad_pro",
+    "version": 1
+  },
+  "project": {
+    "name": "Cube OS",
+    "status": "placeholder",
+    "note": "Replace this starter file by opening and saving a real KiCad project before review."
+  }
+}

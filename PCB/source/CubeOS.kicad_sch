@@ -1,0 +1,12 @@
+(kicad_sch
+	(version 20230121)
+	(generator "Codex scaffold")
+	(uuid "00000000-0000-0000-0000-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Cube OS")
+		(date "2026-05-08")
+		(company "Cube OS contributors")
+		(comment 1 "Placeholder schematic. Replace with the real KiCad schematic before review.")
+	)
+)
