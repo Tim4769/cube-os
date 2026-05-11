@@ -1,99 +1,85 @@
 # Cube OS
 
-Two-legged desktop telepresence robot for keeping long-distance friends connected through physical, playful interaction.
+## Members
 
-## Project
+- Tim
+- Pat
+- Taiyo
 
-- Repo: [Tim4769/cube-os](https://github.com/Tim4769/cube-os)
-- Team: Tim, Pat, Taiyo
-- Concept: Wi-Fi friend robot with walking, voice notes, camera clips, dashboard control, environmental sensing, and four expressive display faces.
+## Description
 
-## Why It Exists
+Cube OS is a desktop robot of 80 x 80 x 80 mm controlled by two legs. It can walk and communicate with other Cube OS robots through online servers using a custom PCB with an ESP32 microcontroller. It supports voice messages, text messages, and remote control features, helping friends stay connected even when they are far apart.
 
-After 7 years at the same school, some team members are graduating and moving away. Cube OS turns remote friendship into a physical desk companion: messages, sounds, robot nudges, camera moments, and shared presence beyond group chats.
+## Features
 
-## Top Features
+- Wi-Fi communication between robots via an online server.
+- Two 9 g servos power a four-bar walking linkage for bipedal locomotion.
+- IMU-assisted stepping, turning, fall detection, and recovery for inertial gait control.
+- Ambient Rest Mode with light-aware quiet, privacy, and do-not-disturb behavior.
+- Desk climate sensing for local humidity and temperature data.
+- Voice Mailbox using the integrated microphone and speaker to record and replay voice notes from friends.
+- USB-C power workflow for battery-powered operation, serial debugging, charging, and flashing.
+- Camera sharing with OV2640 pictures or brief videos sent to friends or the dashboard.
+- Four-face display OS with widgets, expressions, friend feeds, time, status, and air data.
+- Remote control so friends can control another Cube OS and interact from far away.
 
-- Telepresence Network: robot-to-robot Wi-Fi messaging through an online server.
-- Bipedal Locomotion: two 9 g servos driving a four-bar walking linkage.
-- Inertial Gait Control: IMU-assisted stepping, turning, fall detection, and recovery.
-- Ambient Rest Mode: VEML7700 light-aware quiet/do-not-disturb behavior.
-- Desk Climate Sensing: SHT45 temperature and humidity monitoring.
-- Voice Mailbox: ICS-43434 mic recording and MAX98357A speaker playback.
-- USB-C Workflow: charging, flashing, serial logs, and battery-powered use.
-- Camera Sharing: OV2640 snapshots or short clips to dashboard/friends.
-- Four-Face Display OS: widgets, expressions, friend feeds, time, status, and air data.
-- Social Dashboard: pairing, chat, voice, remote control, camera preview, and telemetry.
+## Justification
 
-## Hardware
+Some of our team members are graduating from high school and heading to college after 7 years together at the same school, and we thought, why do not we build something to keep our connection more real and maintain our friend group? Social media and group chats alone make it hard to keep the connection physical, and we will not always have time to fly to each other's cities to meet.
 
-- MCU: ESP32-S3-WROOM-1-N8R8
-- Sensors: ISM330DHCX IMU, SHT45, VEML7700, ICS-43434, 10 kOhm NTC
-- Camera: OV2640 connector
-- Displays: four 1.54 in display FPC connectors
-- Motion: two 3-pin servo headers
-- Audio: MAX98357A I2S amplifier and speaker connector
-- Power: USB-C, 1S LiPo, BQ24074 charger, TPS63802 buck-boost, 2.5 V/1.2 V camera rails
-- PCB: Rev A, KiCad 9.0, 60.05 mm x 60.05 mm, 4-layer FR4
+With Cube OS, we aim to keep annoying each other like we used to, in a friendly manner, by controlling each other's robots and sending random noises and messages at 2 am, like crashing into each other's dorm rooms as we used to. With its extra features, it can also serve as a handy desktop companion for productivity or just an accessory for your desk.
 
-## Active Files
-
-- PCB source: `PCB/Rev A/source/Cube OS/`
-- PCB production: `PCB/Rev A/production/`
-- Gerbers: `PCB/Rev A/gerbers/Gerber.zip`
-- CAD linkage: `CAD/Legs/Linkage V1/`, `CAD/Legs/Linkage V2/`
-- Firmware: `Firmware/`
-- Dashboard placeholder: `Software/`
-- Feature roadmap: `Docs/feature_roadmap.md`
-
-## Empty Placeholders
-
-These folders are intentionally present but do not contain final project files yet:
-
-- `Media/renders/`: no final renders yet
-- `Media/photos/`: no build photos yet
-- `Media/diagrams/`: no diagrams yet
-- `PCB/Rev A/3d_models/`: no PCB 3D render exports yet
-- `Software/src/`: no dashboard source yet
-- `Software/screenshots/`: no dashboard screenshots yet
-- `Zine/`: no final zine export yet
-- `Zine/source/`: no editable zine source yet
-
-`PCB/Template/` is reference data, not active Rev A release data.
-
-## BOM Snapshot
+## BOM Breakdown
 
 | Item | Qty | Estimate |
 | --- | ---: | ---: |
-| PCB minimum production order | 2 | 144 USD |
+| PCB, minimum production amount | 2 | 144 USD |
 | 9 g micro servo motors | 2 | 8 USD |
 | OV2640 camera | 1 | 5 USD |
 | AS02504AR speaker | 1 | 5 USD |
 | 1S 3.7 V LiPo battery | 1 | 6 USD |
-| ER-TFT1.54-2 displays | 4 | 24 USD |
-| **Known subtotal** |  | **192 USD** |
+| ER-TFT1.54-2 display panels | 4 | 24 USD |
+| **Total** |  | **192 USD** |
 
-Detailed sourcing: `BOM/bom.csv` and `BOM/sourcing_notes.md`.
+## Current Status Photos
 
-## Build
+<img src="Media/photos/Mechanical%20status%2020260511222505_905_44.jpg" alt="Mechanical linkage current status" width="420">
 
-```bash
-cd Firmware
-pio run
-pio run --target upload
-```
+Current mechanical linkage prototype.
 
-## Checks
+<img src="Media/photos/PCB%20status%202026-05-11%20at%2010.22.09%E2%80%AFPM.png" alt="PCB current status" width="420">
 
-- PCB DRC: 0 violations, 0 unconnected items.
-- Schematic ERC: 1 error, 37 warnings.
-- Open electrical cleanup: OV2640 duplicate symbol pin numbers and library pin-type warnings.
-- Bring-up plan: `Docs/testing_plan.md`
+Current PCB layout and component placement.
 
-## Past Projects
+## Project Files
 
-- [Microver](https://github.com/Tim4769/Microver): compact rover for the [Swiss Rover Challenge](https://swissroverchallenge.com/).
-- [VEX Robotics 15520X](https://github.com/rosey-15520X): autonomous navigation and game-element manipulation.
+Short index of the main current files. Directory paths, placeholder files, metadata files, scaffold code, TODO files, and planning notes are intentionally excluded.
+
+- PCB source: `PCB/Rev A/source/Cube OS/Cube OS.kicad_pro`, `PCB/Rev A/source/Cube OS/Cube OS.kicad_sch`, `PCB/Rev A/source/Cube OS/Cube OS.kicad_pcb`
+- Fabrication package: `PCB/Rev A/gerbers/Gerber.zip`, `PCB/Rev A/production/BOM.csv`, `PCB/Rev A/production/CPL.csv`
+- Mechanical assembly: `CAD/Legs/Linkage V2/Assembly/Stepping foot linkage prototype v2.step`
+- Current status photos: `Media/photos/Mechanical status 20260511222505_905_44.jpg`, `Media/photos/PCB status 2026-05-11 at 10.22.09 PM.png`
+
+## Placeholder, Scaffold, And Planning Content
+
+These paths are not listed as active project files because they currently contain placeholder files, metadata files, TODO-only files, scaffold code, or planning notes. There is no final project content inside them yet.
+
+- `Media/diagrams/`
+- `Media/renders/`
+- `Media/demo/`
+- `PCB/Rev A/3d_models/`
+- `Firmware/`
+- `BOM/`
+- `Docs/`
+- `Software/`
+- `Software/src/`
+- `Software/screenshots/`
+- `Journal/`
+- `Journal/images/`
+- `Zine/`
+- `Zine/source/`
+
+Also excluded from the active project list: `CAD/Legs/Linkage V2/Components/Placeholder Bar.step`, `Docs/assembly_guide.md`, and `Docs/troubleshooting.md`.
 
 ## License
 
