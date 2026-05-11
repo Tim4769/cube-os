@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Cube_OS_Footprint")(type "KiCad")(uri "${KIPRJMOD}/Cube_OS_Footprint.pretty")(options "")(descr ""))
+)

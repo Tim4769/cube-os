@@ -1,10 +1,9 @@
 # Basic Test
 
-Use this folder for a minimal hardware bring-up sketch or script.
+Minimal Rev A bring-up sketch area.
 
-Suggested checks:
-
-1. Serial output starts.
-2. Status LED toggles.
-3. Power rails are in range.
-4. Each button, sensor, display, or actuator responds.
+- Serial boot log
+- Status LED or debug GPIO
+- Rail checks
+- Button/switch reads
+- Sensor, display, audio, camera, and servo smoke tests

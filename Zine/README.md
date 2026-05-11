@@ -1,9 +1,11 @@
 # Zine
 
-Export the project zine here before review.
+Final review zine exports.
 
-Expected files:
+No final zine files are committed yet.
 
-- `zine.pdf`: final zine export
+Expected later:
+
+- `zine.pdf`: final zine
 - `zine.png`: preview image
-- `source/`: editable source files, exports, or design-tool assets
+- `source/`: editable design files and exports
