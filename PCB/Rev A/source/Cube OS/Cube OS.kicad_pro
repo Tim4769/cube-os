@@ -689,7 +689,7 @@
       "plot": "../../Cube OS/PCB/Rev A/gerbers/",
       "pos_files": "../../Cube OS/PCB/Rev A/production/",
       "specctra_dsn": "",
-      "step": "../../../Downloads/Cube OS 3d model.step",
+      "step": "",
       "svg": "",
       "vrml": ""
     },
@@ -697,7 +697,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "../../Cube OS/PCB/Rev A/production/BOM.csv",
+    "bom_export_filename": "../../Cube OS/PCB/gerbers/BOM.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
