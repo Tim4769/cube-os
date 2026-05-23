@@ -52,7 +52,8 @@ constexpr int I2S_MIC_DATA_PIN = 40;
 constexpr int I2S_SPK_DATA_PIN = 42;
 
 // ISM330DHCX interrupt lines.
-constexpr int IMU_INT1_PIN = 17;
+// INT1 is not connected in the latest Rev A schematic.
+constexpr int IMU_INT1_PIN = PIN_UNASSIGNED;
 constexpr int IMU_INT2_PIN = 18;
 
 // Servo connector PWM pins.
@@ -63,10 +64,15 @@ constexpr int MOVEMENT_SERVO2_PWM_PIN = 2; // M2
 constexpr int MOVEMENT_LEFT_SERVO_PIN = PIN_UNASSIGNED;
 constexpr int MOVEMENT_RIGHT_SERVO_PIN = PIN_UNASSIGNED;
 
-// User/control and charger status pins.
-constexpr int USER_SWITCH_PIN = 5;
-constexpr int CHARGER_PGOOD_PIN = 38;
-constexpr int CHARGER_STAT_PIN = 39;
+// User/control and charger status lines are on the TCA6408 I2C GPIO expander,
+// not direct ESP32 GPIOs.
+constexpr int USER_SWITCH_PIN = PIN_UNASSIGNED;
+constexpr int CHARGER_PGOOD_PIN = PIN_UNASSIGNED;
+constexpr int CHARGER_STAT_PIN = PIN_UNASSIGNED;
+
+constexpr int IO_EXPANDER_CHARGER_PGOOD_PIN = 0;
+constexpr int IO_EXPANDER_CHARGER_STAT_PIN = 1;
+constexpr int IO_EXPANDER_USER_SWITCH_PIN = 2;
 
 // OV2640 camera parallel bus and clock/sync pins.
 constexpr int CAMERA_D0_PIN = 35;
@@ -74,12 +80,12 @@ constexpr int CAMERA_D1_PIN = 36;
 constexpr int CAMERA_D2_PIN = 37;
 constexpr int CAMERA_D3_PIN = 43; // schematic pin function TXD0
 constexpr int CAMERA_D4_PIN = 44; // schematic pin function RXD0
-constexpr int CAMERA_D5_PIN = 45;
-constexpr int CAMERA_D6_PIN = 46;
+constexpr int CAMERA_D5_PIN = 39;
+constexpr int CAMERA_D6_PIN = 38;
 constexpr int CAMERA_D7_PIN = 47;
-constexpr int CAMERA_HREF_PIN = 3;
+constexpr int CAMERA_HREF_PIN = 17;
 constexpr int CAMERA_PCLK_PIN = 48;
-constexpr int CAMERA_VSYNC_PIN = 0;
+constexpr int CAMERA_VSYNC_PIN = 5;
 constexpr int CAMERA_XCLK_PIN = 41;
 constexpr int CAMERA_RESET_PIN = PIN_UNASSIGNED; // pulled up by R14
 constexpr int CAMERA_PWDN_PIN = PIN_UNASSIGNED;  // tied to GND

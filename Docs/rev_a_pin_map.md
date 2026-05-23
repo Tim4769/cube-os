@@ -7,6 +7,7 @@ Use this as the source for filling in `Firmware/src/config.h`. The important
 part of every connection is:
 
 - `U1` is the ESP32-S3-WROOM-1-N8R8.
+- `U7` is the TCA6408 I2C GPIO expander.
 - The schematic net name tells you the signal purpose.
 - The `U1` pin function tells you the ESP32 GPIO to use in firmware.
 - The other nodes on the same net tell you what that GPIO is connected to.
@@ -64,7 +65,8 @@ constexpr int I2S_LRCLK_PIN = 21;
 constexpr int I2S_MIC_DATA_PIN = 40;
 constexpr int I2S_SPK_DATA_PIN = 42;
 
-constexpr int IMU_INT1_PIN = 17;
+// INT1 is not connected in the latest Rev A schematic.
+constexpr int IMU_INT1_PIN = PIN_UNASSIGNED;
 constexpr int IMU_INT2_PIN = 18;
 
 constexpr int MOVEMENT_SERVO1_PWM_PIN = 1; // M1
@@ -74,22 +76,26 @@ constexpr int MOVEMENT_SERVO2_PWM_PIN = 2; // M2
 constexpr int MOVEMENT_LEFT_SERVO_PIN = PIN_UNASSIGNED;
 constexpr int MOVEMENT_RIGHT_SERVO_PIN = PIN_UNASSIGNED;
 
-constexpr int USER_SWITCH_PIN = 5;
+constexpr int USER_SWITCH_PIN = PIN_UNASSIGNED;
 
-constexpr int CHARGER_PGOOD_PIN = 38;
-constexpr int CHARGER_STAT_PIN = 39;
+constexpr int CHARGER_PGOOD_PIN = PIN_UNASSIGNED;
+constexpr int CHARGER_STAT_PIN = PIN_UNASSIGNED;
+
+constexpr int IO_EXPANDER_CHARGER_PGOOD_PIN = 0;
+constexpr int IO_EXPANDER_CHARGER_STAT_PIN = 1;
+constexpr int IO_EXPANDER_USER_SWITCH_PIN = 2;
 
 constexpr int CAMERA_D0_PIN = 35;
 constexpr int CAMERA_D1_PIN = 36;
 constexpr int CAMERA_D2_PIN = 37;
 constexpr int CAMERA_D3_PIN = 43; // schematic pin function TXD0
 constexpr int CAMERA_D4_PIN = 44; // schematic pin function RXD0
-constexpr int CAMERA_D5_PIN = 45;
-constexpr int CAMERA_D6_PIN = 46;
+constexpr int CAMERA_D5_PIN = 39;
+constexpr int CAMERA_D6_PIN = 38;
 constexpr int CAMERA_D7_PIN = 47;
-constexpr int CAMERA_HREF_PIN = 3;
+constexpr int CAMERA_HREF_PIN = 17;
 constexpr int CAMERA_PCLK_PIN = 48;
-constexpr int CAMERA_VSYNC_PIN = 0;
+constexpr int CAMERA_VSYNC_PIN = 5;
 constexpr int CAMERA_XCLK_PIN = 41;
 constexpr int CAMERA_RESET_PIN = PIN_UNASSIGNED; // pulled up by R14
 constexpr int CAMERA_PWDN_PIN = PIN_UNASSIGNED;  // tied to GND
@@ -104,13 +110,12 @@ constexpr int USB_D_P_PIN = 20;
 | --- | --- | --- |
 | `SERVO1_PWM` | GPIO1 | `M1` servo PWM |
 | `SERVO2_PWM` | GPIO2 | `M2` servo PWM |
-| `CAM_HREF` | GPIO3 | `CAM1` OV2640 HREF |
-| `DISP_TOP_CS` | GPIO4 | `U7` top display CS |
-| `USER_SWITCH` | GPIO5 | `SW2` through `R16` |
+| `DISP_TOP_CS` | GPIO4 | `U11` top display CS |
+| `CAM_VSYNC` | GPIO5 | OV2640 VSYNC |
 | `DISP_FRONT_CS` | GPIO6 | `U9` front display CS |
 | `DISP_LEFT_CS` | GPIO7 | `U12` left display CS |
-| `I2C_SDA` | GPIO8 | OV2640 SCCB SDA, SHT45 SDA, VEML7700 SDA, ISM330DHCX SDA |
-| `I2C_SCL` | GPIO9 | OV2640 SCCB SCL, SHT45 SCL, VEML7700 SCL, ISM330DHCX SCL |
+| `I2C_SDA` | GPIO8 | OV2640 SCCB SDA, SHT45 SDA, VEML7700 SDA, ISM330DHCX SDA, TCA6408 SDA |
+| `I2C_SCL` | GPIO9 | OV2640 SCCB SCL, SHT45 SCL, VEML7700 SCL, ISM330DHCX SCL, TCA6408 SCL |
 | `DISP_DC` | GPIO10 | Shared display D/C |
 | `DISP_MOSI` | GPIO11 | Shared display SDA/MOSI |
 | `DISP_SCLK` | GPIO12 | Shared display SCLK |
@@ -118,7 +123,7 @@ constexpr int USB_D_P_PIN = 20;
 | `DISP_RST` | GPIO14 | Shared display reset |
 | `DISP_RIGHT_CS` | GPIO15 | `U10` right display CS |
 | `I2S_BCLK` | GPIO16 | `MK1` mic SCK and `U13` amp BCLK |
-| `IMU_INT1` | GPIO17 | `U5` ISM330DHCX INT1 |
+| `CAM_HREF` | GPIO17 | OV2640 HREF |
 | `IMU_INT2` | GPIO18 | `U5` ISM330DHCX INT2 |
 | `USB_D_N` | GPIO19 | USB-C D- |
 | `USB_D_P` | GPIO20 | USB-C D+ |
@@ -126,17 +131,23 @@ constexpr int USB_D_P_PIN = 20;
 | `CAM_D0` | GPIO35 | OV2640 DATA2 |
 | `CAM_D1` | GPIO36 | OV2640 DATA3 |
 | `CAM_D2` | GPIO37 | OV2640 DATA4 |
-| `CHG_PGOOD` | GPIO38 | `U8` BQ24074 `*PGOOD` through `R13` |
-| `CHG_STAT` | GPIO39 | `U8` BQ24074 `*CHG` through `R12` |
+| `CAM_D6` | GPIO38 | OV2640 DATA8 |
+| `CAM_D5` | GPIO39 | OV2640 DATA7 |
 | `I2S_MIC_DATA` | GPIO40 | `MK1` mic SD |
 | `CAM_XCLK` | GPIO41 | OV2640 XCLK |
 | `I2S_SPK_DATA` | GPIO42 | `U13` MAX98357A DIN |
 | `CAM_D3` | GPIO43 / TXD0 | OV2640 DATA5 |
 | `CAM_D4` | GPIO44 / RXD0 | OV2640 DATA6 |
-| `CAM_D5` | GPIO45 | OV2640 DATA7 |
-| `CAM_D6` | GPIO46 | OV2640 DATA8 |
 | `CAM_D7` | GPIO47 | OV2640 DATA9 |
 | `CAM_PCLK` | GPIO48 | OV2640 PCLK |
+
+## TCA6408 GPIO Expander Map
+
+| Signal | TCA6408 pin | Device connection |
+| --- | --- | --- |
+| `CHG_PGOOD` | P0 | `U8` BQ24074 `*PGOOD` through `R13` |
+| `CHG_STAT` | P1 | `U8` BQ24074 `*CHG` through `R12` |
+| `USER_SWITCH` | P2 | `SW2` through `R16` |
 
 ## Shared Buses
 
@@ -144,8 +155,8 @@ I2C/SCCB bus:
 
 | Signal | GPIO | Connected parts |
 | --- | --- | --- |
-| `I2C_SDA` | GPIO8 | OV2640 `SIO_D`, SHT45 `SDA`, VEML7700 `SDA`, ISM330DHCX `SDA`, pullup `R2` |
-| `I2C_SCL` | GPIO9 | OV2640 `SIO_C`, SHT45 `SCL`, VEML7700 `SCL`, ISM330DHCX `SCL`, pullup `R1` |
+| `I2C_SDA` | GPIO8 | OV2640 `SIO_D`, SHT45 `SDA`, VEML7700 `SDA`, ISM330DHCX `SDA`, TCA6408 `SDA`, pullup `R2` |
+| `I2C_SCL` | GPIO9 | OV2640 `SIO_C`, SHT45 `SCL`, VEML7700 `SCL`, ISM330DHCX `SCL`, TCA6408 `SCL`, pullup `R1` |
 
 Display SPI-like bus:
 
@@ -156,7 +167,7 @@ Display SPI-like bus:
 | `DISP_DC` | GPIO10 | All four display `D/C` pins |
 | `DISP_RST` | GPIO14 | All four display `RESET` pins |
 | `DISP_BL_PWM` | GPIO13 | Backlight MOSFET `Q1` gate |
-| `DISP_TOP_CS` | GPIO4 | Top display `U7` |
+| `DISP_TOP_CS` | GPIO4 | Top display `U11` |
 | `DISP_FRONT_CS` | GPIO6 | Front display `U9` |
 | `DISP_RIGHT_CS` | GPIO15 | Right display `U10` |
 | `DISP_LEFT_CS` | GPIO7 | Left display `U12` |
@@ -179,9 +190,10 @@ I2S audio:
 - The camera power-down pin is tied to GND, so it is always enabled.
 - `CAM_D3` and `CAM_D4` use the ESP32-S3 UART0 pins. In Arduino-style GPIO
   numbering, use GPIO43 for TXD0 and GPIO44 for RXD0.
-- `CHG_PGOOD` and `CHG_STAT` reach GPIO38/GPIO39 through `R13`/`R12`.
-  Verify the charger status input behavior during board bring-up before
-  relying on these signals for product logic.
+- `IMU_INT1` is no-connect in the latest Rev A schematic. Use `IMU_INT2`
+  on GPIO18 unless the schematic changes again.
+- `CHG_PGOOD`, `CHG_STAT`, and `USER_SWITCH` are on the TCA6408 I2C GPIO
+  expander, not direct ESP32 GPIOs.
 - `M1` and `M2` are schematic names only. Confirm which physical servo is left
   and right during assembly before assigning `MOVEMENT_LEFT_SERVO_PIN` and
   `MOVEMENT_RIGHT_SERVO_PIN`.
