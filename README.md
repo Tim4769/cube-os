@@ -57,6 +57,8 @@ Short index of the main current files. Directory paths, placeholder files, metad
 
 - PCB source: `PCB/Rev A/source/Cube OS/Cube OS.kicad_pro`, `PCB/Rev A/source/Cube OS/Cube OS.kicad_sch`, `PCB/Rev A/source/Cube OS/Cube OS.kicad_pcb`
 - Fabrication package: `PCB/Rev A/gerbers/Gerber.zip`, `PCB/Rev A/production/BOM.csv`, `PCB/Rev A/production/CPL.csv`
+- PCB 3D export: `PCB/Rev A/3d_models/PCB 3d model.step`
+- Order package: `PCB/Rev A/order/BOM_manufacture.xls`, `PCB/Rev A/order/ordering contract.pdf`
 - Mechanical assembly: `CAD/Legs/Linkage V2/Assembly/Stepping foot linkage prototype v2.step`
 - Current status photos: `Media/photos/Mechanical status 20260511222505_905_44.jpg`, `Media/photos/PCB status 2026-05-11 at 10.22.09 PM.png`
 
@@ -67,7 +69,6 @@ These paths are not listed as active project files because they currently contai
 - `Media/diagrams/`
 - `Media/renders/`
 - `Media/demo/`
-- `PCB/Rev A/3d_models/`
 - `Firmware/`
 - `BOM/`
 - `Docs/`

@@ -10,6 +10,7 @@ Cube OS Rev A electrical design, KiCad source, Gerbers, PCBA files, footprints, 
 - Finish: HAL lead-free
 - Assembly: top-side SMT and connectors
 - Fabrication archive: `Rev A/gerbers/Gerber.zip`
+- Order package: `Rev A/order/`
 
 ## Active Files
 
@@ -18,7 +19,8 @@ Cube OS Rev A electrical design, KiCad source, Gerbers, PCBA files, footprints, 
 - CPL: `Rev A/production/CPL.csv`
 - Notes: `Rev A/production/fabrication_notes.md`
 - Gerbers: `Rev A/gerbers/Gerber/`
-- 3D render exports: `Rev A/3d_models/`
+- 3D board export: `Rev A/3d_models/PCB 3d model.step`
+- Order records: `Rev A/order/`
 - Template/reference data: `Template/`
 
 ## Electronics

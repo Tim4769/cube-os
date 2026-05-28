@@ -1,9 +1,6 @@
 # Rev A PCB 3D Models
 
-No PCB 3D render exports are committed yet.
+Rev A board-level 3D export.
 
-Expected later:
-
-- `pcb_3d_front.png`
-- `pcb_3d_back.png`
-- Optional: assembled board screenshots from KiCad 3D Viewer
+- STEP export: `PCB 3d model.step`
+- Generated from the Rev A KiCad board for mechanical fit checks.
