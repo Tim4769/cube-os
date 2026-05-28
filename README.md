@@ -43,11 +43,11 @@ With Cube OS, we aim to keep annoying each other like we used to, in a friendly 
 
 ## Current Status Photos
 
-<img src="Media/photos/Mechanical%20status%2020260511222505_905_44.jpg" alt="Mechanical linkage current status" width="420">
+<img src="Media/Mechanical%20status%2020260511222505_905_44.jpg" alt="Mechanical linkage current status" width="420">
 
 Current mechanical linkage prototype.
 
-<img src="Media/photos/PCB%20status%202026-05-11%20at%2010.22.09%E2%80%AFPM.png" alt="PCB current status" width="420">
+<img src="Media/PCB%20status%202026-05-28%20at%206.02.45%E2%80%AFPM.png" alt="PCB current status" width="420">
 
 Current PCB layout and component placement.
 
@@ -56,31 +56,27 @@ Current PCB layout and component placement.
 Short index of the main current files. Directory paths, placeholder files, metadata files, scaffold code, TODO files, and planning notes are intentionally excluded.
 
 - PCB source: `PCB/Rev A/source/Cube OS/Cube OS.kicad_pro`, `PCB/Rev A/source/Cube OS/Cube OS.kicad_sch`, `PCB/Rev A/source/Cube OS/Cube OS.kicad_pcb`
-- Fabrication package: `PCB/Rev A/gerbers/Gerber.zip`, `PCB/Rev A/production/BOM.csv`, `PCB/Rev A/production/CPL.csv`
-- PCB 3D export: `PCB/Rev A/3d_models/PCB 3d model.step`
-- Order package: `PCB/Rev A/order/BOM_manufacture.xls`, `PCB/Rev A/order/ordering contract.pdf`
+- PCB fabrication package: `PCB/Rev A/gerbers/Gerber.zip`, `PCB/Rev A/production/BOM.csv`, `PCB/Rev A/production/CPL.csv`, `PCB/Rev A/production/fabrication_notes.md`
+- PCB order package: `PCB/Rev A/order/BOM_manufacture.xls`, `PCB/Rev A/order/ordering contract.pdf`
+- PCB 3D export and linked models: `PCB/Rev A/3d_models/PCB 3d model.step`, `PCB/Rev A/source/Cube OS/3D models/`
+- Firmware bring-up: `Firmware/platformio.ini`, `Firmware/src/main.cpp`, `Firmware/src/config.h`, `Firmware/src/`
+- Sourcing and budget: `BOM/bom.csv`, `BOM/sourcing_notes.md`
 - Mechanical assembly: `CAD/Legs/Linkage V2/Assembly/Stepping foot linkage prototype v2.step`
-- Current status photos: `Media/photos/Mechanical status 20260511222505_905_44.jpg`, `Media/photos/PCB status 2026-05-11 at 10.22.09 PM.png`
+- Current status photos: `Media/Mechanical status 20260511222505_905_44.jpg`, `Media/PCB status 2026-05-28 at 6.02.45 PM.png`
+
+## Git LFS
+
+Large binary project assets are tracked with Git LFS through `.gitattributes`, including status photos, CAD/STEP exports, Gerber/drill manufacturing files, archives, PDFs, and spreadsheet order records.
 
 ## Placeholder, Scaffold, And Planning Content
 
 These paths are not listed as active project files because they currently contain placeholder files, metadata files, TODO-only files, scaffold code, or planning notes. There is no final project content inside them yet.
 
-- `Media/diagrams/`
-- `Media/renders/`
-- `Media/demo/`
-- `Firmware/`
-- `BOM/`
-- `Docs/`
 - `Software/`
 - `Software/src/`
 - `Software/screenshots/`
-- `Journal/`
-- `Journal/images/`
-- `Zine/`
-- `Zine/source/`
 
-Also excluded from the active project list: `CAD/Legs/Linkage V2/Components/Placeholder Bar.step`, `Docs/assembly_guide.md`, and `Docs/troubleshooting.md`.
+Also excluded from the active project list: `CAD/Legs/Linkage V2/Components/Placeholder Bar.step`.
 
 ## License
 

@@ -1,15 +1,3 @@
-%TF.GenerationSoftware,KiCad,Pcbnew,9.0.6*%
-%TF.CreationDate,2026-05-09T20:18:15+02:00*%
-%TF.ProjectId,Health One,4865616c-7468-4204-9f6e-652e6b696361,A*%
-%TF.SameCoordinates,Original*%
-%TF.FileFunction,Paste,Bot*%
-%TF.FilePolarity,Positive*%
-%FSLAX46Y46*%
-G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 9.0.6) date 2026-05-09 20:18:15*
-%MOMM*%
-%LPD*%
-G01*
-G04 APERTURE LIST*
-G04 APERTURE END LIST*
-M02*
+version https://git-lfs.github.com/spec/v1
+oid sha256:7e50f68d3714e3cec498052386ce4c2bdbb363faeecfee29a56801dc19a7a054
+size 450

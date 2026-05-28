@@ -6167,44 +6167,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at -25.4 -33.02 0)
-					(length 5.08)
-					(hide yes)
-					(name "DGND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "MT1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -25.4 -33.02 0)
-					(length 5.08)
-					(hide yes)
-					(name "DGND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "MT2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -25.4 -35.56 0)
 					(length 5.08)
 					(name "AGND"
@@ -12400,6 +12362,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 215.9) (xy 182.88 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2193b1eb-cee7-48d0-9514-9b7dbdd12c29")
+	)
+	(wire
+		(pts
 			(xy 115.57 201.93) (xy 115.57 215.9)
 		)
 		(stroke
@@ -15280,6 +15252,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 208.28) (xy 184.15 207.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad142bb3-0d46-43fd-91af-406cf2483a8a")
+	)
+	(wire
+		(pts
 			(xy 39.37 116.84) (xy 39.37 161.29)
 		)
 		(stroke
@@ -16477,6 +16459,16 @@
 			(type default)
 		)
 		(uuid "e42d25b7-562b-42d6-9146-c458b1a513db")
+	)
+	(wire
+		(pts
+			(xy 182.88 208.28) (xy 184.15 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5165fc5-43c5-4483-be0f-7437f68ec372")
 	)
 	(wire
 		(pts
@@ -20630,6 +20622,73 @@
 			(project ""
 				(path "/1824f342-0d29-49b4-8da8-99a2a0b66501"
 					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 182.88 217.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "38b0a8bd-7f8f-4942-9f4a-6e6a569ba1f4")
+		(property "Reference" "#PWR054"
+			(at 182.88 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 182.88 222.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 182.88 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "29f66741-7bdf-4f0e-baba-5388d462da0b")
+		)
+		(instances
+			(project "Cube OS"
+				(path "/1824f342-0d29-49b4-8da8-99a2a0b66501"
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -26172,6 +26231,85 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 182.88 212.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c3d63fa0-a015-4ecf-8556-0e09a07f056e")
+		(property "Reference" "R25"
+			(at 185.42 210.8199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100kΩ"
+			(at 185.42 213.3599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 181.102 212.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 182.88 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 182.88 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25741"
+			(at 182.88 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "95a26d7b-f012-490e-9767-3d81c29500ad")
+		)
+		(pin "2"
+			(uuid "c19d46a6-d660-40ea-ae40-16f63d82fd5c")
+		)
+		(instances
+			(project "Cube OS"
+				(path "/1824f342-0d29-49b4-8da8-99a2a0b66501"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 83.82 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26826,14 +26964,8 @@
 		(pin "4"
 			(uuid "422c1564-bb48-4615-8b0a-a21671ecb95a")
 		)
-		(pin "MT1"
-			(uuid "30ed4cfa-c11c-47be-a826-d63bdfdb95c2")
-		)
 		(pin "15"
 			(uuid "e228b2c4-3cd3-480f-a814-9e22eac9fe8d")
-		)
-		(pin "MT2"
-			(uuid "01b3c290-754f-450b-917e-54687f8100f8")
 		)
 		(pin "2"
 			(uuid "96bd4bc3-1b94-4abc-8c5c-4302c3610382")
@@ -28316,7 +28448,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RGT16_1P45X1P45"
+		(property "Footprint" "Cube_OS_Footprint:RGT16_1P45X1P45"
 			(at 120.65 220.98 0)
 			(effects
 				(font
