@@ -1,17 +1,13 @@
 #include <Arduino.h>
-#include "config.h"
 
-static bool led_state = false;
+#include "Firmware.h"
 
+// setup() runs once every time the ESP32 boots or restarts.
 void setup() {
-  Serial.begin(SERIAL_BAUD_RATE);
-  pinMode(STATUS_LED_PIN, OUTPUT);
-  Serial.println("Cube OS firmware scaffold started");
+  firmwareSetup();
 }
 
+// loop() runs forever after setup(). It must stay quick so the web server can respond.
 void loop() {
-  led_state = !led_state;
-  digitalWrite(STATUS_LED_PIN, led_state ? HIGH : LOW);
-  Serial.println("heartbeat");
-  delay(1000);
+  firmwareLoop();
 }
