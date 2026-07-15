@@ -51,6 +51,10 @@ Current mechanical linkage prototype.
 
 Current PCB layout and component placement.
 
+<img src="Media/PCB%20status%202026-07-15%20at%209.23.13%20PM.jpg" alt="Assembled Cube OS Rev A PCB current status" width="420">
+
+Current assembled Rev A PCB during USB, firmware, and Wi-Fi power bring-up.
+
 ## Project Files
 
 Short index of the main current files. Directory paths, placeholder files, metadata files, scaffold code, TODO files, and planning notes are intentionally excluded.
@@ -62,7 +66,7 @@ Short index of the main current files. Directory paths, placeholder files, metad
 - Firmware bring-up: `Firmware/platformio.ini`, `Firmware/src/main.cpp`, `Firmware/src/config.h`, `Firmware/src/`
 - Sourcing and budget: `BOM/bom.csv`, `BOM/sourcing_notes.md`
 - Mechanical assembly: `CAD/Legs/Linkage V2/Assembly/Stepping foot linkage prototype v2.step`
-- Current status photos: `Media/Mechanical status 20260511222505_905_44.jpg`, `Media/PCB status 2026-05-28 at 6.02.45 PM.png`
+- Current status photos: `Media/Mechanical status 20260511222505_905_44.jpg`, `Media/PCB status 2026-05-28 at 6.02.45 PM.png`, `Media/PCB status 2026-07-15 at 9.23.13 PM.jpg`
 
 ## Git LFS
 
