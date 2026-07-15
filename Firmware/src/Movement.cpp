@@ -14,8 +14,8 @@ namespace {
 constexpr int SERVO_PWM_FREQUENCY_HZ = 50;
 
 // PWM resolution controls how many tiny steps the ESP32 can use for the signal.
-// 16 bits gives values from 0 to 65535, which is smooth enough for servo pulses.
-constexpr int SERVO_PWM_RESOLUTION_BITS = 16;
+// 14 bits gives values from 0 to 16383 and fits the ESP32-S3 LEDC limit at 50 Hz.
+constexpr int SERVO_PWM_RESOLUTION_BITS = 14;
 
 // LEDC is the ESP32 PWM system.
 // Each servo gets its own PWM channel, like a separate output lane.
