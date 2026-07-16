@@ -5,6 +5,7 @@
 #include "Movement.h"
 #include "Network.h"
 #include "config.h"
+#include "Sensors.h"
 
 namespace {
 
@@ -24,9 +25,16 @@ void firmwareSetup() {
   Serial.print("Reset reason: ");
   Serial.println(esp_reset_reason());
 
-  // Step 4: Prepare movement hardware hooks. This is a no-op until movement pins are assigned.
+  // Keep the servo PWM outputs active so M1 and M2 can be checked with the oscilloscope.
   setupMovement();
 
+  // Keep the Wi-Fi radio completely off while checking whether TP5 and TP6 remain stable.
+  WiFi.mode(WIFI_OFF);
+  Serial.println("PWM test active: movement enabled and Wi-Fi disabled.");
+
+  setupSensors();
+
+  /*
   // Step 5: Create empty variables where saved Wi-Fi credentials can be loaded.
   String savedSsid;
   String savedPassword;
@@ -50,6 +58,7 @@ void firmwareSetup() {
 
   // Step 10: Setup mode lets a user enter Wi-Fi details through a browser.
   startSetupMode();
+  */
 }
 
 void firmwareLoop() {
@@ -58,6 +67,8 @@ void firmwareLoop() {
 
   // Step 2: Let movement update without blocking the web server.
   updateMovement();
+
+  updateSensors();
 
   // Step 3: If the web server is running, check for browser requests.
   handleWebServerClient();
